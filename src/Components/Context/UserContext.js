@@ -9,5 +9,15 @@ export default function UserContextProvider({ children }) {
 
   const isUserLogged = () => userState.accessToken;
 
-  return <UserContext.Provider value={{}}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider
+      value={{
+        userState,
+        dispatchUserState,
+        isUserLogged,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 }
