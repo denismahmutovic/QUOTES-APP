@@ -1,23 +1,13 @@
-import React from "react";
+import { createContext, useState, values } from "react";
 
-export const UserContext = createContext();
+const TokenContext = createContext();
 
-export default function UserContextProvider({ children }) {
-  const [userState, dispatchUserState] = useReducer(userReducer, {
-    accessToken: null,
-  });
-
-  const isUserLogged = () => userState.accessToken;
-
+export function TokenProvider({ children }) {
+  const [token, setToken] = useState(null);
+  const [afterLogin, setAfterLogin] = useState(false);
+  values = { setAfterLogin, setToken };
   return (
-    <UserContext.Provider
-      value={{
-        userState,
-        dispatchUserState,
-        isUserLogged,
-      }}
-    >
-      {children}
-    </UserContext.Provider>
+    <TokenContext.Provider value={values}>{children}</TokenContext.Provider>
   );
 }
+export { TokenContext };
