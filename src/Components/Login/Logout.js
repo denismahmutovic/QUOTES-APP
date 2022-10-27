@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { TokenContext } from "../Context/UserContext";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import Quotes from "../Quotes/Quotes";
 
 const LoginForm = () => {
   const { setToken, setAfterLogin } = useContext(TokenContext);
@@ -16,6 +17,7 @@ const LoginForm = () => {
     <div>
       Hello
       <button onClick={logout}>Logout</button>
+      <Quotes />
     </div>
   );
 };

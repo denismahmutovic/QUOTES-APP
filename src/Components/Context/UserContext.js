@@ -5,7 +5,8 @@ const TokenContext = createContext();
 export function TokenProvider({ children }) {
   const [token, setToken] = useState(null);
   const [afterLogin, setAfterLogin] = useState(false);
-  values = { setAfterLogin, setToken };
+  values = { setAfterLogin, setToken, token };
+
   return (
     <TokenContext.Provider value={values}>{children}</TokenContext.Provider>
   );
