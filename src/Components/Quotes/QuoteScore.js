@@ -15,14 +15,14 @@ export default function QuoteScore({ data, setScr }) {
   const addVote = (vote) => {
     return fetch(`http://localhost:8000/quotes/${data.id}/${vote}`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${token.accessToken}` },
+      headers: { Authorization: "Bearer " + token },
     });
   };
 
   const deleteVote = (vote) => {
     return fetch(`http://localhost:8000/quotes/${data.id}/${vote}`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${token.accessToken}` },
+      headers: { Authorization: "Bearer " + token },
     });
   };
 
