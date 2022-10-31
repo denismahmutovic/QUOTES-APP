@@ -11,7 +11,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -34,12 +33,14 @@ const LoginPage = () => {
       })
       .then(function (response) {
         setToken(response.data.accessToken);
+
         localStorage.setItem("token", response.data.accessToken);
         setAfterLogin(true);
         setInvalid(false);
         navigate("/logout");
         console.log(response.data.accessToken);
       })
+
       .catch(function (err) {
         setToken(null);
         localStorage.setItem("token", null);

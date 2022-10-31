@@ -1,14 +1,17 @@
 import React from "react";
 import axios from "axios";
-import QuotesCss from "./Quotes.css";
+import Quote from "./Quote";
 import { TokenContext } from "../Context/UserContext";
 
-import { useContext, useEffect } from "react";
+import "./QuoteList.css";
 
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 
 export default function Quotes() {
   const [quoteArray, setQuoteArray] = useState([]);
+  const [changedScore, setChangedScore] = useState(false);
+
   const { token } = useContext(TokenContext);
   useEffect(() => {
     axios
@@ -19,22 +22,19 @@ export default function Quotes() {
         console.log(data.quotes);
         setQuoteArray(data.quotes);
       });
-  }, []);
+  }, [changedScore]);
 
   return (
     <div className="quoteListContainer">
       <h1>Quotes</h1>
 
-      {quoteArray.map((el) => {
+      {quoteArray.map((quote, i) => {
         return (
-          <div className="dva" key={el.id}>
-            <div className="flex">
-              <p className="content">
-                {el.content} {el.author}
-              </p>
-              <p className="flex-dva"> {el.author} </p>
-            </div>
-          </div>
+          <Quote
+            key={quote.id + i.toString()}
+            props={quote}
+            updateScr={setChangedScore}
+          />
         );
       })}
     </div>
