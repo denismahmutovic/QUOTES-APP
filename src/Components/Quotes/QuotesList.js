@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import Quote from "./Quote";
 import { TokenContext } from "../Context/UserContext";
+import Drawer from "../Pages/Drawer";
+import QuoteTag from "./QuoteTag";
 
 import "./QuoteList.css";
 
@@ -27,6 +29,7 @@ export default function Quotes() {
   return (
     <div className="quoteListContainer">
       <h1>Quotes</h1>
+      <Drawer />
 
       {quoteArray.map((quote, i) => {
         return (
