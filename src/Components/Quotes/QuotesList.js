@@ -11,20 +11,14 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 
 export default function Quotes() {
-  const [quoteArray, setQuoteArray] = useState([]);
+  // const [quoteArray, setQuoteArray] = useState([]);
   const [changedScore, setChangedScore] = useState(false);
 
   const { token } = useContext(TokenContext);
+  const { getQuotes, quoteArray, sortTags } = useContext(TokenContext);
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/quotes`, {
-        headers: { Authorization: "Bearer " + token },
-      })
-      .then(({ data }) => {
-        console.log(data.quotes);
-        setQuoteArray(data.quotes);
-      });
-  }, [changedScore]);
+    getQuotes();
+  }, [changedScore, sortTags]);
 
   return (
     <div className="quoteListContainer">

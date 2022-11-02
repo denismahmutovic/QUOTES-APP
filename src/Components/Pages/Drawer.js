@@ -11,8 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import QuoteTag from "../Quotes/QuoteTag";
-import QuoteBody from "../Quotes/QuoteBody";
-
+import MenuIcon from "@mui/icons-material/Menu";
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
@@ -39,22 +38,9 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {["proba"].map((text, index) => (
-          <ListItem disablePadding>
-            <ListItemButton>
-              <QuoteTag />
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
       <Divider />
       <List>
-        {[].map((text, index) => (
+        {/* {["All mail"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -62,9 +48,11 @@ export default function TemporaryDrawer() {
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
+            <QuoteTag />
           </ListItem>
-        ))}
+        ))} */}
       </List>
+      <QuoteTag />
     </Box>
   );
 
@@ -72,7 +60,8 @@ export default function TemporaryDrawer() {
     <div>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <MenuIcon onClick={toggleDrawer(anchor, true)}>{anchor} </MenuIcon>
+
           <Drawer
             anchor={anchor}
             open={state[anchor]}
