@@ -37,9 +37,11 @@ export default function QuoteTag() {
           <div key={el}>
             <input
               defaultValue={el}
-              type="name"
+              type="checkbox"
               onClick={(e) => setSortTags(e.target.value)}
             />
+            <label> {el}</label>
+            <br></br>
           </div>
         );
       })}

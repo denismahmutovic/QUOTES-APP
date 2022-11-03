@@ -12,6 +12,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import QuoteTag from "../Quotes/QuoteTag";
 import MenuIcon from "@mui/icons-material/Menu";
+
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
@@ -20,7 +21,7 @@ export default function TemporaryDrawer() {
     right: false,
   });
 
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (anchor, open, logout) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -61,7 +62,6 @@ export default function TemporaryDrawer() {
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <MenuIcon onClick={toggleDrawer(anchor, true)}>{anchor} </MenuIcon>
-
           <Drawer
             anchor={anchor}
             open={state[anchor]}
