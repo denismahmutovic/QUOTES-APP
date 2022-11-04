@@ -81,6 +81,8 @@ const LoginPage = () => {
   // );
   const theme = createTheme();
 
+  console.log(window);
+
   return (
     <ThemeProvider classname="color" theme={theme}>
       <Container component="main" maxWidth="xs" onSubmit={submitHandler}>

@@ -19,12 +19,13 @@ export default function Quotes() {
   useEffect(() => {
     getQuotes();
   }, [changedScore, sortTags]);
+  console.log(window);
 
   return (
     <div className="quoteListContainer">
       <h1>Quotes</h1>
-      <Drawer />
 
+      <QuoteTag />
       {quoteArray.map((quote, i) => {
         return (
           <Quote
