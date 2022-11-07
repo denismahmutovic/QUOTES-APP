@@ -80,7 +80,7 @@ export default function QuotesAdd() {
               setAxiosTags(tagsValue.split(","))
             )}
           >
-            Addd
+            Add
           </button>
         </div>
       </form>
