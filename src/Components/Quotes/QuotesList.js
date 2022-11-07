@@ -4,6 +4,7 @@ import Quote from "./Quote";
 import { TokenContext } from "../Context/UserContext";
 import Drawer from "../Pages/Drawer";
 import QuoteTag from "./QuoteTag";
+import QuotesAdd from "./QuotesAdd";
 
 import "./QuoteList.css";
 
@@ -19,13 +20,12 @@ export default function Quotes() {
   useEffect(() => {
     getQuotes();
   }, [changedScore, sortTags]);
-  console.log(window);
 
   return (
     <div className="quoteListContainer">
+      <QuotesAdd />
       <h1>Quotes</h1>
-
-      <QuoteTag />
+      {/* <QuoteTag /> */}
       {quoteArray.map((quote, i) => {
         return (
           <Quote

@@ -20,13 +20,11 @@ const LoginForm = () => {
     <div>
       <div className="aut">
         <h1>Quotes</h1>
-
         <Button variant="contained" onClick={logout}>
           Logout
         </Button>
         <Drawer />
       </div>
-
       <Quotes />
     </div>
   );

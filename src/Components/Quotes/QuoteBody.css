@@ -1,5 +1,4 @@
 .quoteBody {
-   
     width: 100%;
     color: black;
     border-radius: 8px;
@@ -11,11 +10,10 @@
     border: 1px solid #1d2b37;
     background-color: white;
     margin-left: 4%;
-    
-    
+  
   }
   .author{
-    margin-left: 460px;
+    margin-left: 470px;
     font-size: 14px;
     color: grey;
 

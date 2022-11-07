@@ -20,17 +20,6 @@ export default function QuoteTag() {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/tags`, {
-        headers: { Authorization: "Bearer " + token },
-      })
-      .then(({ data }) => {
-        console.log(data);
-        setTag(data);
-      });
-  }, []);
-
   // const handleCheck = (event) => {
   //   let updatedList = [...sortTags];
   //   if (event.target.sortTags) {
