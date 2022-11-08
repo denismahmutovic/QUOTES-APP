@@ -15,7 +15,6 @@ export default function QuotesAdd() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   const addQuote = () => {
     axios.post(
       "http://localhost:8000/quotes",
@@ -38,7 +37,9 @@ export default function QuotesAdd() {
         style={{
           display: "flex",
         }}
-        onSubmit={(e) => (e.preventDefault(), addQuote())}
+        onSubmit={(e) => (
+          e.preventDefault(), addQuote(), console.log("aklsjdlsa")
+        )}
       >
         <input
           type={"text"}
