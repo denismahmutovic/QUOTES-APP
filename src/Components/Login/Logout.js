@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { TokenContext } from "../Context/UserContext";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Quotes from "../Quotes/QuotesList";
@@ -8,7 +8,8 @@ import "./Logout.css";
 import Button from "@mui/material/Button";
 import Drawer from "../Pages/Drawer";
 const LoginForm = () => {
-  const { setToken, setAfterLogin } = useContext(TokenContext);
+  const { setToken, setAfterLogin, token, getQuotes } =
+    useContext(TokenContext);
   const navigate = useNavigate();
   const logout = ({ logout }) => {
     setToken(null);
@@ -16,6 +17,20 @@ const LoginForm = () => {
     navigate("/");
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    if (token === null) {
+      let tkn = localStorage.getItem("token");
+      if (!tkn) {
+        navigate("/");
+      }
+      setToken(tkn);
+    }
+  }, [token]);
+
+  useEffect(() => {
+    getQuotes();
+  }, [token]);
   return (
     <div>
       <div className="aut">

@@ -3,9 +3,6 @@ import { TokenContext } from "../Context/UserContext";
 import axios from "axios";
 import { useEffect } from "react";
 
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-
 export default function QuotesAdd() {
   const { token } = useContext(TokenContext);
   const [contentValue, setContentValue] = useState("");
@@ -14,6 +11,10 @@ export default function QuotesAdd() {
   const [axiosAuthor, setAxiosAuthor] = useState();
   const [axiosContent, setAxiosContent] = useState();
   const [axiosTags, setAxiosTags] = useState();
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const addQuote = () => {
     axios.post(
@@ -37,9 +38,7 @@ export default function QuotesAdd() {
         style={{
           display: "flex",
         }}
-        onSubmit={(e) => (
-          e.preventDefault(), addQuote(), console.log("aklsjdlsa")
-        )}
+        onSubmit={(e) => (e.preventDefault(), addQuote())}
       >
         <input
           type={"text"}

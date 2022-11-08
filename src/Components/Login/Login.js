@@ -23,7 +23,9 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [invalid, setInvalid] = useState(false);
   const { setToken, setAfterLogin } = useContext(TokenContext);
+
   const navigate = useNavigate();
+
   const submitHandler = (e) => {
     e.preventDefault();
     axios
@@ -81,10 +83,8 @@ const LoginPage = () => {
   // );
   const theme = createTheme();
 
-  console.log(window);
-
   return (
-    <ThemeProvider classname="color" theme={theme}>
+    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs" onSubmit={submitHandler}>
         <CssBaseline />
         <Box

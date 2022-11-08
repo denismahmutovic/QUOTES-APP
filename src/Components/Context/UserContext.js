@@ -8,6 +8,7 @@ export function TokenProvider({ children }) {
   const [token, setToken] = useState(null);
   const [afterLogin, setAfterLogin] = useState(false);
   const [sortTags, setSortTags] = useState([]);
+  const [tags, setTag] = useState([]);
 
   const getQuotes = () => {
     axios
@@ -28,6 +29,7 @@ export function TokenProvider({ children }) {
     quoteArray,
     sortTags,
     setSortTags,
+    tags,
   };
 
   return (
