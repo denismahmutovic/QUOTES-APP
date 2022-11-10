@@ -47,7 +47,7 @@ export default function Quotes() {
   return (
     <div className="quoteListContainer">
       <QuotesAdd />
-      <h1>Quotes</h1>
+      <h1>Quotes List</h1>
       {/* <QuoteTag /> */}
       {quoteArray
         .map((quote, i) => {

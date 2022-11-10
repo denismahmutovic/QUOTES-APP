@@ -3,11 +3,10 @@ import { TokenContext } from "../Context/UserContext";
 import axios from "axios";
 import { useEffect, useContext } from "react";
 import { useState } from "react";
+
 export default function QuoteTag() {
-  const { token, setSortTags, sortTags } = useContext(TokenContext);
+  const { token, setSortTags } = useContext(TokenContext);
   const [tags, setTag] = useState([]);
-  const [checked, setChecked] = useState([]);
-  // const [sortTags, setSortTags] = useState([]);
 
   useEffect(() => {
     axios

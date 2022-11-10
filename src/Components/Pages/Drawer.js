@@ -5,7 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import QuoteTag from "../Quotes/QuoteTag";
 import { TokenContext } from "../Context/UserContext";
-import { useContext } from "react";
+
 export default function SelectSmall() {
   const [age, setAge] = React.useState("");
 
