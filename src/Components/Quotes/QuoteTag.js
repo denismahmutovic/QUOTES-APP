@@ -20,16 +20,6 @@ export default function QuoteTag() {
       });
   }, []);
 
-  // const handleCheck = (event) => {
-  //   let updatedList = [...sortTags];
-  //   if (event.target.sortTags) {
-  //     updatedList = [...sortTags, event.target.value];
-  //   } else {
-  //     updatedList.splice(sortTags.indexOf(event.target.value), 1);
-  //   }
-  //   setSortTags(updatedList);
-  // };
-
   const handleCheckBox = (e) => {
     setSortTags((prev) => {
       if (prev.find((el) => el === e.target.value)) {
