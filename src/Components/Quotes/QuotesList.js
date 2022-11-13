@@ -46,8 +46,15 @@ export default function Quotes() {
 
   return (
     <div className="quoteListContainer">
-      <QuotesAdd />
-      <h1>Quotes List</h1>
+      <div className="flex">
+        <h1 className="">Quotes List</h1>
+
+        {/* <Drawer />
+        <div>
+          <QuotesAdd />
+        </div> */}
+      </div>
+
       {/* <QuoteTag /> */}
       {quoteArray
         .map((quote, i) => {

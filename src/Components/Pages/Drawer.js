@@ -14,7 +14,7 @@ export default function SelectSmall() {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small" className="bg">
       <InputLabel id="demo-select-small">Citati</InputLabel>
       <Select
         labelId="demo-select-small"

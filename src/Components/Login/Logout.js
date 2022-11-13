@@ -7,6 +7,8 @@ import QuoteTag from "../Quotes/QuoteTag";
 import "./Logout.css";
 import Button from "@mui/material/Button";
 import Drawer from "../Pages/Drawer";
+import QuotesAdd from "../Quotes/QuotesAdd";
+import Proba from "../Pages/Proba";
 const LoginForm = () => {
   const { setToken, setAfterLogin, token, getQuotes } =
     useContext(TokenContext);
@@ -24,6 +26,7 @@ const LoginForm = () => {
       if (!tkn) {
         navigate("/");
       }
+
       setToken(tkn);
     }
   }, [token]);
@@ -34,11 +37,18 @@ const LoginForm = () => {
   return (
     <div>
       <div className="aut">
-        <h1>Quotes</h1>
-        <Button variant="contained" onClick={logout}>
+        <h1 className="name">Quotes</h1>
+
+        <QuotesAdd />
+        {/* <Proba /> */}
+        <Drawer />
+        <Button
+          variant="contained"
+          onClick={logout}
+          style={{ background: "#263949" }}
+        >
           Logout
         </Button>
-        <Drawer />
       </div>
       <Quotes />
     </div>

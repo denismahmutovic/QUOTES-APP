@@ -1,5 +1,11 @@
 .aut{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
+    /* background-color:grey; */;
+    width: 100%;
+    background-color: #263949;
+    color: white;
+    padding-left: 50px;
+    
 }

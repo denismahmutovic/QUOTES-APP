@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Login/Logout";
+import Footer from "./Components/Pages/Footer";
 
 function App() {
   return (
